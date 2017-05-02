@@ -8,7 +8,6 @@ package characters.turretry;
 import asteroid.defense.Game;
 import characters.GameRigidBody;
 import characters.asteroids.Asteroid;
-import java.io.File;
 import javax.imageio.ImageIO;
 import physics.Vector;
 import physics.VectorMath;
@@ -36,7 +35,7 @@ public class Turret extends GameRigidBody{
     }
     
     public boolean interceptionIsPossible(Vector asteroidCenterOfMAss, Vector asteroidVelocity){
-        
+        //NOT IMPLEMENTED
         return false;
     }
     
@@ -59,37 +58,35 @@ public class Turret extends GameRigidBody{
         //gamma + angleFromEarthToSpawningPoint = angle in which the missile intercepts the asteroid
         
         double alpha = calculateAlpha(asteroidCenterOfMAss, asteroidVelocity);
-        //ALPHA IS CURRENTLY RIGHT AS LONG AS YOU SHOOT TOWARDS EARTH NOT AWAY
         
         gamma = calculateGamma(alpha);
         if(gamma == -1){
-            //DONT SHOOT MISSILE
+            //MISSILE IS UNABLE TO REACH ASTEROID AND WILL SHOOT FALSELY
         }
-        
         
         this.angle = angleFromEarthToSpawningPoint + gamma;
-        boolean fix = tangentFunctionFix(asteroidCenterOfMAss, asteroidVelocity);
-        System.out.println(fix);
-        if(fix){
+        if(tangentFunctionFixNeeded(asteroidCenterOfMAss, asteroidVelocity)){
             this.angle = angleFromEarthToSpawningPoint-gamma;
         }
+        
         missile.setSpeedVectorByAngle(angle);
     }
     
-    private boolean tangentFunctionFix(Vector asteroidCenterOfMAss, Vector asteroidVelocity){
+    //this will fix possible mistakes due to the tangent functions limitedness
+    private boolean tangentFunctionFixNeeded(Vector asteroidCenterOfMAss, Vector asteroidVelocity){
         return VectorMath.CoordinateIsOnLeftHandSideOfLine(cmVector, asteroidCenterOfMAss, asteroidVelocity);
     }
     
     private double calculateGamma(double alpha){
         double missileVelocity = Missile.getDefaultVelocity();
         double asteroidVelocity = Asteroid.getDefaultVelocity();
-        //ratio is the same ratio as the distance ratio that both have to travel to get to
-        //the interception point
+        
         double ratio = asteroidVelocity / missileVelocity;
         
         if(Math.abs(ratio*Math.sin(alpha))>1){
             return -1;//code takes you here if you shoot away
-                      //from the earth and missile can't catch up due to being slower
+                      //from the earth and missile can't catch up due to being slower.
+                      //Fix for this not implemented.
         }
         
         return Math.asin(ratio*Math.sin(alpha));
@@ -98,14 +95,11 @@ public class Turret extends GameRigidBody{
     
     /*Alpha is the angle between the asteroid trajectory
     and the line defined by earth's center of mass and the spawning
-    coorinate of the asteroid. I use it to find the angle gamma, in which to shoot*/
+    coorinate of the asteroid. I use it to find the angle gamma*/
     private double calculateAlpha(Vector astroidCenterOfMass, Vector asteroidVelocity){
         double dx = this.cmVector.getI() - astroidCenterOfMass.getI();
         double dy = this.cmVector.getJ() - astroidCenterOfMass.getJ();
-        /*System.out.println("slope1 from earth to asteroid: "+  VectorMath.slope(dx, dy));
-        System.out.println("asteroid dx: "+asteroidVelocity.getI());
-        System.out.println("asteroid dy: "+asteroidVelocity.getJ());
-        System.out.println("slope2 of asteroid speedvector: " + asteroidVelocity.getSlope());*/
+        
         return VectorMath.angleBetweenTwoSlopes(VectorMath.slope(dx, dy),
                 asteroidVelocity.getSlope());
     }

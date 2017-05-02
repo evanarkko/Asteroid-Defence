@@ -31,7 +31,7 @@ public class GameMouseListener implements MouseListener{
 
     @Override
     public void mousePressed(MouseEvent e) {
-       asteroidSpawner.setSpawnPositionVector(new Vector(e.getX(), e.getY()));
+       asteroidSpawner.initializeSpawnPositionVector(new Vector(e.getX(), e.getY()));
     }
 
     @Override

@@ -5,13 +5,10 @@
  */
 package characters.asteroids;
 
-import characters.earth.Earth;
 import characters.GameCharacter;
 import java.awt.Graphics;
 import java.io.File;
 import javax.imageio.ImageIO;
-import physics.Vector;
-import physics.VectorMath;
 
 /**
  *
@@ -25,17 +22,6 @@ public class Asteroid extends GameCharacter{
         this.velocity = (int)defaultVelocity;
         width = diameter;
         height = diameter;
-    }
-    
-    
-    
-    @Override
-    protected void setImage(){
-        try{
-            image = ImageIO.read(new File("src/imageResources/asteroid.png"));
-        }catch(Exception e){
-            System.out.println("Exception in setting Asteroids's image");
-        }
     }
 
     @Override

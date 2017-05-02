@@ -9,7 +9,6 @@ import interfaces.drawable;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
-import java.awt.geom.AffineTransform;
 import physics.Vector;
 
 /**
@@ -24,7 +23,7 @@ public class GameRigidBody implements drawable{
     protected double angle;
 
     @Override
-    public void draw(Graphics g) {//http://stackoverflow.com/questions/10685016/rotating-an-image-in-java
+    public void draw(Graphics g) {
         Graphics2D g2d = (Graphics2D)g;
         g2d.rotate(angle, cmVector.getI(), cmVector.getJ());
         g2d.drawImage(image, (int)positionVector.getI(), (int)positionVector.getJ(), width, height, null);

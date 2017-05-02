@@ -66,7 +66,7 @@ public class VectorMath {
     }
     
     public static boolean CoordinateIsOnLeftHandSideOfLine(Vector coordinate, Vector position, Vector direction){
-        //d=(x−x1)(y2−y1)−(y−y1)(x2−x1)
+        //d=(x−x1)(y2−y1)−(y−y1)(x2−x1) is the equation I use
         double x = coordinate.getI();
         double y = coordinate.getJ();
         

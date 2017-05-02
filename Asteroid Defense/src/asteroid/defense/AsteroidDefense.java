@@ -28,7 +28,6 @@ public class AsteroidDefense {
         
         
         GameThread gt = new GameThread(game);
-        
         gt.setRunning(true);
         gt.run();
     }

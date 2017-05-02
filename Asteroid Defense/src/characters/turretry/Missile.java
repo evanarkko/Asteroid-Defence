@@ -13,7 +13,7 @@ import java.awt.Graphics;
  * @author eamiller
  */
 public class Missile extends GameCharacter{
-    private static final double defaultVelocity = 3;
+    private static final double defaultVelocity = 7;
     private static final int defaultWidth = 5;
     private static final int defaultHeight = 5;
     
@@ -25,12 +25,11 @@ public class Missile extends GameCharacter{
 
     @Override
     public void draw(Graphics g) {
-        super.draw(g); //To change body of generated methods, choose Tools | Templates.
+        super.draw(g);
         g.fillRect((int)positionVector.getI(), (int)positionVector.getJ(), width, height);
     }
     
     
-
     public static int getDefaultHeight() {
         return defaultHeight;
     }

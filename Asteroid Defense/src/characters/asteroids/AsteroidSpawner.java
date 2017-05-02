@@ -22,7 +22,7 @@ public class AsteroidSpawner {
         this.game = game;
     }
     
-    public void setSpawnPositionVector(Vector vector){
+    public void initializeSpawnPositionVector(Vector vector){
         this.spawningAsteroid = new Asteroid();
         spawningAsteroid.setPosition(vector);
     }

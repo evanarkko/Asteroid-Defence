@@ -7,8 +7,6 @@ package characters.earth;
 
 import characters.GameRigidBody;
 import java.awt.Graphics;
-import java.io.File;
-import java.io.IOException;
 import javax.imageio.ImageIO;
 import physics.Vector;
 import ui.GameFrame;

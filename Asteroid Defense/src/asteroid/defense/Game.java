@@ -13,8 +13,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import physics.Collider;
 import physics.Vector;
-import ui.GameCanvas;
-import ui.GameFrame;
+import ui.*;
 
 /**
  *
@@ -103,12 +102,4 @@ public class Game implements updateable {
     public ArrayList<Missile> getMissiles() {
         return missiles;
     }
-    
-    
-
-    
-    
-    
-    
-    
 }
