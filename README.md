@@ -1,7 +1,7 @@
 # Asteroid-Defence
 Small game development project for job application
 
-INSTRUCTIONS:/n
+INSTRUCTIONS:
 -spawn new asteroid with a click&drag motion
 -Changeable constants are: missile velocity, asteroid velocity 
  and Safety Zone radius.
