@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/eamiller/NetBeansProjects/Asteroid%20Defense/src/characters/turretry/Turret.java</file>
+            <file>file:/home/eamiller/NetBeansProjects/Asteroid%20Defense/src/characters/asteroids/Asteroid.java</file>
+            <file>file:/home/eamiller/NetBeansProjects/Asteroid%20Defense/src/characters/GameCharacter.java</file>
+            <file>file:/home/eamiller/NetBeansProjects/Asteroid%20Defense/src/ui/GameCanvas.java</file>
+            <file>file:/home/eamiller/NetBeansProjects/Asteroid%20Defense/src/asteroid/defense/Game.java</file>
+            <file>file:/home/eamiller/NetBeansProjects/Asteroid%20Defense/src/characters/asteroids/AsteroidSpawner.java</file>
+            <file>file:/home/eamiller/NetBeansProjects/Asteroid%20Defense/src/physics/VectorMath.java</file>
+            <file>file:/home/eamiller/NetBeansProjects/Asteroid%20Defense/src/characters/turretry/Missile.java</file>
+        </group>
+    </open-files>
+</project-private>
